@@ -43,17 +43,15 @@ export default function Navbar() {
       position="sticky"
       top={0}
       zIndex={100}
-      bg="gray.950"
-      borderBottomWidth="1px"
-      borderColor="gray.800"
       px={6}
       py={3}
+      className="glass-nav"
     >
       <Flex align="center" justify="space-between" maxW="7xl" mx="auto">
         <Link to="/home">
           <HStack gap={2}>
             <img src={logo} alt="logo" style={{ height: '2rem' }} />
-            <Text id="title" fontWeight="bold" fontSize="lg" color="cyan.400" letterSpacing="wider">
+            <Text id="title" fontWeight="bold" fontSize="lg" letterSpacing="wider" className="text-dark-cyan-600">
               GAME-OVER
             </Text>
           </HStack>
@@ -64,11 +62,12 @@ export default function Navbar() {
             <Button
               variant="ghost"
               size="sm"
-              color={isAll ? 'cyan.400' : 'gray.300'}
-              borderBottomWidth={isAll ? '2px' : '0'}
-              borderColor="cyan.400"
               borderRadius={0}
-              _hover={{ color: 'cyan.400' }}
+              className={`border-b-2 transition-colors ${
+                isAll
+                  ? 'border-accent-glow text-accent-glow'
+                  : 'border-transparent text-text-secondary hover:text-accent-glow'
+              }`}
             >
               All Games
             </Button>
@@ -82,8 +81,8 @@ export default function Navbar() {
         <IconButton
           aria-label="Toggle menu"
           variant="ghost"
-          color="gray.300"
           display={{ base: 'flex', md: 'none' }}
+          className="text-text-secondary hover:text-accent-glow"
           onClick={() => setMobileOpen(o => !o)}
         >
           {mobileOpen ? <X size={20} /> : <MenuIcon size={20} />}
@@ -91,15 +90,15 @@ export default function Navbar() {
       </Flex>
 
       {mobileOpen && (
-        <Box display={{ md: 'none' }} pb={4} pt={2}>
-          <Separator mb={3} borderColor="gray.800" />
+        <Box display={{ md: 'none' }} pb={4} pt={2} className="animate-fade-in">
+          <Separator mb={3} className="border-border-subtle" />
           <Box display="flex" flexDir="column" gap={2}>
             <Link to="/game/all" onClick={() => setMobileOpen(false)}>
               <Button
                 variant="ghost"
                 w="full"
                 justifyContent="flex-start"
-                color={isAll ? 'cyan.400' : 'gray.300'}
+                className={isAll ? 'text-accent-glow' : 'text-text-secondary'}
               >
                 All Games
               </Button>
@@ -121,11 +120,12 @@ function NavDropdown({ label, items, active, onSelect }: { label: string; items:
         <Button
           variant="ghost"
           size="sm"
-          color={active ? 'cyan.400' : 'gray.300'}
-          borderBottomWidth={active ? '2px' : '0'}
-          borderColor="cyan.400"
           borderRadius={0}
-          _hover={{ color: 'cyan.400' }}
+          className={`border-b-2 transition-colors ${
+            active
+              ? 'border-accent-glow text-accent-glow'
+              : 'border-transparent text-text-secondary hover:text-accent-glow'
+          }`}
         >
           {label} <ChevronDown size={14} />
         </Button>
@@ -133,21 +133,19 @@ function NavDropdown({ label, items, active, onSelect }: { label: string; items:
       <Portal>
         <Menu.Positioner>
           <Menu.Content
-            bg="gray.900"
-            borderColor="gray.700"
             maxH="60"
             overflowY="auto"
             minW="44"
             zIndex={200}
+            className="bg-surface-raised/95! backdrop-blur-xl border-border-subtle! shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
           >
             {items.map(item => (
               <Menu.Item
                 key={item}
                 value={item}
-                color="gray.300"
-                _hover={{ bg: 'gray.800', color: 'cyan.400' }}
                 textTransform="capitalize"
                 cursor="pointer"
+                className="text-text-secondary! hover:bg-accent/15! hover:text-accent-glow! transition-all duration-150"
                 onClick={() => onSelect(item)}
               >
                 <Gamepad2 size={14} />
@@ -170,22 +168,22 @@ function MobileSection({ title, items, prefix, active, onNavigate }: { title: st
         variant="ghost"
         w="full"
         justifyContent="space-between"
-        color={active ? 'cyan.400' : 'gray.300'}
+        className={active ? 'text-accent-glow' : 'text-text-secondary'}
         onClick={() => setOpen(o => !o)}
       >
         {title}
         <ChevronDown size={14} style={{ transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
       </Button>
       {open && (
-        <Box pl={4} display="flex" flexDir="column" gap={1} mt={1}>
+        <Box pl={4} display="flex" flexDir="column" gap={1} mt={1} className="animate-fade-in">
           {items.map(item => (
             <Button
               key={item}
               variant="ghost"
               size="sm"
               justifyContent="flex-start"
-              color="gray.400"
               textTransform="capitalize"
+              className="text-text-dim hover:text-accent-glow"
               onClick={() => { navigate(`/game/${prefix}/${item}`); onNavigate() }}
             >
               {item.replace(/-/g, ' ')}

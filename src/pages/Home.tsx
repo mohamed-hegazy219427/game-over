@@ -4,8 +4,8 @@ import { useQuery } from '@tanstack/react-query'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import axios from 'axios'
-import { Box, Container, Grid, Heading, Text, Button, Badge, HStack } from '@chakra-ui/react'
-import { Bot } from 'lucide-react'
+import { Box, Container, Grid, Heading, Text, HStack } from '@chakra-ui/react'
+import { Bot, Sparkles } from 'lucide-react'
 import type { Game } from '../types'
 import GameCard from '../components/ui/GameCard'
 import GameCardSkeleton from '../components/ui/GameCardSkeleton'
@@ -41,42 +41,57 @@ export default function Home() {
 
   return (
     <Box>
+      {/* Hero Section */}
       <Box
         ref={heroRef}
         textAlign="center"
         py={24}
-        borderBottomWidth="1px"
-        borderColor="gray.800"
-        bgGradient="to-b"
-        gradientFrom="gray.950"
-        gradientTo="gray.900"
+        position="relative"
+        overflow="hidden"
+        className="border-b border-border-subtle"
       >
-        <Container maxW="3xl" px={4}>
-          <Heading className="hero-heading" as="h1" size="4xl" mb={4} lineHeight="tight" color="white">
+        {/* Grid background pattern */}
+        <div className="absolute inset-0 bg-grid opacity-60" />
+        {/* Radial gradient overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-dark-teal-200)_0%,transparent_70%)]" />
+
+        <Container maxW="3xl" px={4} position="relative" zIndex={10}>
+          <Heading
+            className="hero-heading text-text-primary"
+            as="h1"
+            size="4xl"
+            mb={4}
+            lineHeight="tight"
+          >
             Find &amp; track the best{' '}
-            <Text as="span" color="cyan.400">free-to-play</Text>{' '}
+            <Text as="span" className="text-gradient">free-to-play</Text>{' '}
             games!
           </Heading>
-          <Text className="hero-sub" fontSize="xl" color="gray.500" mb={8}>
+          <Text className="hero-sub text-text-dim" fontSize="xl" mb={8}>
             Track what you&apos;ve played and search for what to play next!
           </Text>
           <Link to="/game/all">
-            <Button className="hero-btn" variant="outline" colorPalette="cyan" size="lg" px={8}>
+            <button className="hero-btn btn btn-primary text-base px-10 py-3 animate-pulse-glow">
+              <Sparkles size={18} />
               Browse Games
-            </Button>
+            </button>
           </Link>
         </Container>
       </Box>
 
+      {/* Recommendations Section */}
       <Container maxW="7xl" px={4} py={16}>
         <HStack gap={3} mb={8}>
-          <HStack gap={2} color="gray.500">
+          <HStack gap={2} className="text-text-dim">
             <Bot size={22} />
-            <Heading as="h3" size="lg" color="gray.500">
+            <Heading as="h3" size="lg" className="text-text-secondary">
               Personalized Recommendations
             </Heading>
           </HStack>
-          <Badge colorPalette="cyan" variant="subtle" borderRadius="full">Popular</Badge>
+          <span className="badge badge-warm">
+            <Sparkles size={12} />
+            Popular
+          </span>
         </HStack>
 
         {isError ? (

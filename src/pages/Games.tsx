@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import axios from 'axios'
-import { Box, Container, Grid, Heading, Badge, HStack } from '@chakra-ui/react'
+import { Box, Container, Grid, Heading, HStack } from '@chakra-ui/react'
 import type { Game } from '../types'
 import GameCard from '../components/ui/GameCard'
 import GameCardSkeleton from '../components/ui/GameCardSkeleton'
@@ -59,13 +59,13 @@ export default function Games() {
   return (
     <Container maxW="7xl" px={4} py={10}>
       <HStack gap={3} mb={8} align="center">
-        <Heading as="h2" size="xl" color="gray.200" textTransform="capitalize">
+        <Heading as="h2" size="xl" textTransform="capitalize" className="text-text-primary">
           {pageTitle(filter, value)}
         </Heading>
         {games && (
-          <Badge colorPalette="cyan" variant="subtle" borderRadius="full">
+          <span className="badge">
             {games.length} games
-          </Badge>
+          </span>
         )}
       </HStack>
 

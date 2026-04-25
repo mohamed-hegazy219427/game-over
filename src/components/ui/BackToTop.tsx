@@ -11,8 +11,6 @@ export default function BackToTop() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  if (!visible) return null
-
   return (
     <IconButton
       aria-label="Back to top"
@@ -20,11 +18,13 @@ export default function BackToTop() {
       bottom={8}
       right={8}
       zIndex={50}
-      colorPalette="cyan"
       borderRadius="full"
       shadow="xl"
       size="lg"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      className={`bg-accent! hover:bg-accent-glow! text-surface! transition-all duration-300 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
     >
       <ArrowUp size={18} />
     </IconButton>

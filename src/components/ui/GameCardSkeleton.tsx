@@ -3,11 +3,9 @@ import { Box, Skeleton, SkeletonText } from '@chakra-ui/react'
 export default function GameCardSkeleton() {
   return (
     <Box
-      bg="gray.900"
       borderRadius="lg"
       overflow="hidden"
-      borderWidth="1px"
-      borderColor="gray.800"
+      className="bg-surface-raised border border-border-subtle"
     >
       <Skeleton h="44" />
       <Box p={4} display="flex" flexDir="column" gap={3}>
