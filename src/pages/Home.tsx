@@ -3,27 +3,18 @@ import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import axios from 'axios'
 import { Box, Container, Grid, Heading, Text, HStack } from '@chakra-ui/react'
 import { Bot, Sparkles } from 'lucide-react'
-import type { Game } from '../types'
+import { fetchPopularGames } from '../services/api'
 import GameCard from '../components/ui/GameCard'
 import GameCardSkeleton from '../components/ui/GameCardSkeleton'
 import ErrorState from '../components/ui/ErrorState'
 
-const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY as string
-const API_HOST = import.meta.env.VITE_RAPIDAPI_HOST as string
-
-async function fetchPopular(): Promise<Game[]> {
-  const { data } = await axios.get(`https://${API_HOST}/api/games`, {
-    headers: { 'X-RapidAPI-Key': API_KEY, 'X-RapidAPI-Host': API_HOST },
-    params: { 'sort-by': 'popularity' },
-  })
-  return data
-}
-
 export default function Home() {
-  const { data: games, isSuccess, isError, refetch } = useQuery({ queryKey: ['games', 'popularity'], queryFn: fetchPopular })
+  const { data: games, isSuccess, isError, refetch } = useQuery({ 
+    queryKey: ['games', 'relevance'], 
+    queryFn: fetchPopularGames 
+  })
   const heroRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
 
@@ -92,17 +83,20 @@ export default function Home() {
             <Sparkles size={12} />
             Popular
           </span>
+          <Link to="/game/all" className="ml-auto text-sm text-accent-glow hover:underline">
+            See All →
+          </Link>
         </HStack>
 
         {isError ? (
           <ErrorState onRetry={() => refetch()} />
         ) : (
-          <Grid ref={cardsRef} templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }} gap={6}>
+          <Grid ref={cardsRef} templateColumns={{ base: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }} gap={6}>
             {games
-              ? games.slice(0, 3).map(game => (
+              ? games.slice(0, 4).map(game => (
                   <Box key={game.id} className="rec-card"><GameCard game={game} /></Box>
                 ))
-              : Array.from({ length: 3 }).map((_, i) => <GameCardSkeleton key={i} />)}
+              : Array.from({ length: 4 }).map((_, i) => <GameCardSkeleton key={i} />)}
           </Grid>
         )}
       </Container>

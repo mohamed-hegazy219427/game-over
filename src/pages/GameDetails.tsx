@@ -3,25 +3,13 @@ import { Link, useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import axios from 'axios'
 import {
   Box, Grid, Heading, Text, Image,
   Skeleton, SkeletonText,
 } from '@chakra-ui/react'
 import { ExternalLink } from 'lucide-react'
-import type { GameDetail } from '../types'
+import { fetchGameById } from '../services/api'
 import ScreenShotsSlider from '../components/ui/ScreenShotsSlider'
-
-const API_KEY = import.meta.env.VITE_RAPIDAPI_KEY as string
-const API_HOST = import.meta.env.VITE_RAPIDAPI_HOST as string
-
-async function fetchGame(id: string): Promise<GameDetail> {
-  const { data } = await axios.get(`https://${API_HOST}/api/game`, {
-    headers: { 'X-RapidAPI-Key': API_KEY, 'X-RapidAPI-Host': API_HOST },
-    params: { id },
-  })
-  return data
-}
 
 function GameDetailSkeleton() {
   return (
@@ -50,7 +38,7 @@ export default function GameDetails() {
 
   const { data: game, isSuccess } = useQuery({
     queryKey: ['game', id],
-    queryFn: () => fetchGame(id!),
+    queryFn: () => fetchGameById(id!),
     enabled: !!id,
   })
 
