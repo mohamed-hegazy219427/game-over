@@ -1,23 +1,24 @@
 # 🎮 Game Over
 
-A modern, visually stunning free-to-play game discovery platform. Browse, search, and explore hundreds of free games across multiple genres and platforms.
+A modern, visually stunning free-to-play game discovery platform. Browse, search, and explore hundreds of free games across multiple genres and platforms with a focus on premium aesthetics and smooth user experience.
 
-> Built with React, TypeScript, Tailwind CSS v4, and Chakra UI — featuring a custom ocean-inspired dark theme with glassmorphism effects and smooth GSAP animations.
+> **Built with React, TypeScript, Tailwind CSS v4, and Chakra UI** — featuring a custom ocean-inspired dark theme with glassmorphism effects, dynamic floating backgrounds, and state-of-the-art GSAP animations.
 
 ---
 
 ## ✨ Features
 
-- **Browse Games** — Explore a vast library of free-to-play games with infinite scroll
-- **Filter by Category** — MMORPG, Shooter, Strategy, MOBA, Racing, and 25+ more genres
-- **Filter by Platform** — PC, Browser, or All
-- **Sort Results** — By relevance, popularity, release date, or alphabetically
-- **Game Details** — Full game info with screenshots slider, system requirements, and metadata
-- **Genre-Coded Badges** — Each genre has a unique color identity for quick visual scanning
-- **Responsive Design** — Fully responsive across mobile, tablet, and desktop
-- **Smooth Animations** — GSAP-powered entrance animations and scroll-triggered reveals
-- **Glass UI** — Frosted glass navbar, cards, and overlays using backdrop-blur effects
-- **Custom Color Palette** — 10-color ocean-to-fire gradient theme (ink-black → brown-red)
+- **Centralized Explorer** — A dedicated Games page with integrated, high-performance filtering.
+- **Advanced Filtering** — Browse by **Category** (30+ genres), **Platform** (PC, Browser, All), and **Sort** (Relevance, Release Date, Alphabetical).
+- **Premium Glass UI** — Frosted glass navigation, card containers, and dropdowns using advanced backdrop-blur effects.
+- **Dynamic Backgrounds** — Animated floating glow elements that add depth and life to the interface.
+- **High-End Game Cards** — Featuring:
+  - **Interactive Hover Shine**: A moving light effect on hover.
+  - **Play Free Overlay**: Contextual action buttons that slide into view.
+  - **Intense Genre Badges**: High-contrast, color-coded badges for 25+ game categories.
+- **Game Details** — Deep-dive pages with auto-playing screenshot sliders, detailed system requirements, and direct play links.
+- **Performance & Reliability** — Built with TanStack Query for smart caching and Axios with automated CORS fallback logic.
+- **Fully Responsive** — Seamless experience from ultra-wide monitors to mobile devices.
 
 ---
 
@@ -25,102 +26,72 @@ A modern, visually stunning free-to-play game discovery platform. Browse, search
 
 | Technology | Purpose |
 |------------|---------|
-| [React 18](https://react.dev/) | UI framework |
-| [TypeScript](https://www.typescriptlang.org/) | Type safety |
-| [Vite](https://vitejs.dev/) | Build tool & dev server |
-| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling & color system |
-| [Chakra UI v3](https://www.chakra-ui.com/) | Component library (layout & behavior) |
-| [React Router v6](https://reactrouter.com/) | Client-side routing |
-| [TanStack Query](https://tanstack.com/query) | Server state & caching |
-| [GSAP](https://greensock.com/gsap/) | Animations & scroll effects |
-| [Axios](https://axios-http.com/) | HTTP client |
-| [Lucide React](https://lucide.dev/) | Icon system |
+| [React 18](https://react.dev/) | Core UI framework |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety & developer experience |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Design system & utility-first styling |
+| [Chakra UI v3](https://www.chakra-ui.com/) | Accessible component foundation |
+| [TanStack Query](https://tanstack.com/query) | Server state management & caching |
+| [GSAP](https://greensock.com/gsap/) | Premium animations & scroll effects |
+| [Axios](https://axios-http.com/) | Reliable API communication |
+| [Lucide React](https://lucide.dev/) | Modern icon system |
 
 ---
 
-## 🎨 Color Palette
+## 🎨 Design System
 
-The app uses a custom 10-color palette inspired by ocean depths to sunset warmth:
+### Color Palette
+Inspired by deep-sea trenches transitioning into fiery sunsets:
+- **Surface**: `#001219` (Ink Black)
+- **Primary Accent**: `#0a9396` (Dark Cyan)
+- **Glow Accent**: `#0ed3d7` (Cyan Glow)
+- **Highlights**: `#ee9b00` (Golden Orange)
+- **Danger/Action**: `#ae2012` (Oxidized Iron)
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| Ink Black | `#001219` | Page background |
-| Dark Teal | `#005f73` | Raised surfaces, borders |
-| Dark Cyan | `#0a9396` | Primary accent |
-| Pearl Aqua | `#94d2bd` | Secondary text |
-| Vanilla Custard | `#e9d8a6` | Card game badges |
-| Golden Orange | `#ee9b00` | Warm highlights |
-| Burnt Caramel | `#ca6702` | Racing badges |
-| Rusty Spice | `#bb3e03` | Action badges |
-| Oxidized Iron | `#ae2012` | Error states |
-| Brown Red | `#9b2226` | MOBA badges |
+### UI Patterns
+- **Glassmorphism**: 85%+ background opacity with `16px` blur.
+- **Micro-interactions**: Scale transforms, shimmer effects, and magnetic hover states.
+- **Motion**: `expo.out` easing for all page transitions and card reveals.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+- Node.js (v18+)
+- RapidAPI Key for [FreeToGame](https://rapidapi.com/digiwalls/api/free-to-play-games-database)
 
-- [Node.js](https://nodejs.org/) (v18 or higher)
-- A free API key from [RapidAPI — FreeToGame](https://rapidapi.com/digiwalls/api/free-to-play-games-database)
-
-### Installation
-
+### Setup
 ```bash
-# Clone the repository
+# Clone and Install
 git clone https://github.com/mohamed-hegazy219427/game-over.git
-
-# Navigate to the project
 cd game-over
-
-# Install dependencies
 npm install
-```
 
+# Environment Variables
+# Create a .env file with:
+# VITE_RAPIDAPI_KEY=your_key_here
+# VITE_RAPIDAPI_HOST=free-to-play-games-database.p.rapidapi.com
 
-### Development
-
-```bash
+# Start Development
 npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) to view the app.
-
-### Production Build
-
-```bash
-npm run build
-npm run preview
 ```
 
 ---
 
-## 📁 Project Structure
+## 📁 Architecture
+
+The project follows a modular, service-oriented architecture:
 
 ```
 src/
-├── assets/              # Static assets (logo, images)
 ├── components/
-│   ├── layout/
-│   │   ├── Layout.tsx       # Root layout with navbar & footer
-│   │   └── Navbar.tsx       # Glass navigation with dropdowns
-│   └── ui/
-│       ├── BackToTop.tsx    # Scroll-to-top button
-│       ├── ErrorState.tsx   # Error display with retry
-│       ├── GameCard.tsx     # Game card with genre badges
-│       ├── GameCardSkeleton.tsx  # Loading skeleton
-│       ├── Loading.tsx      # Spinner component
-│       └── ScreenShotsSlider.tsx # Auto-playing image carousel
-├── pages/
-│   ├── Home.tsx         # Hero + recommendations
-│   ├── Games.tsx        # Game grid with filters
-│   ├── GameDetails.tsx  # Full game info page
-│   └── NotFound.tsx     # 404 page
-├── App.tsx              # Router configuration
-├── main.tsx             # Entry point
-├── theme.ts             # Chakra UI system config
-├── types.ts             # TypeScript interfaces
-└── index.css            # Tailwind v4 design system
+│   ├── layout/         # Navigation, Main Layout
+│   └── ui/             # Reusable UI (GameCard, Dropdowns, Sliders)
+├── constants/          # Shared filter data & configurations
+├── services/           # Axios API services with fallback logic
+├── pages/              # Top-level route components
+├── types/              # Centralized TypeScript interfaces
+└── index.css           # Custom Tailwind v4 theme & animations
 ```
 
 ---
@@ -128,13 +99,13 @@ src/
 ## 👨‍💻 Developer
 
 **Mohamed Hegazy**
+*Front-end Developer & UI/UX Enthusiast*
 
 - GitHub: [@mohamed-hegazy219427](https://github.com/mohamed-hegazy219427)
 
 ---
 
 ##  Acknowledgments
-
-- Game data provided by [FreeToGame API](https://www.freetogame.com/api-doc)
-- Icons by [Lucide](https://lucide.dev/)
-- Animations powered by [GSAP](https://greensock.com/)
+- Data: [FreeToGame API](https://www.freetogame.com/api-doc)
+- Hosting: [Netlify](https://www.netlify.com/)
+- Design Inspiration: Modern Gaming Hubs
