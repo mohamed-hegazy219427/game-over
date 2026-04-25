@@ -1,70 +1,140 @@
-# Getting Started with Create React App
+# 🎮 Game Over
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, visually stunning free-to-play game discovery platform. Browse, search, and explore hundreds of free games across multiple genres and platforms.
 
-## Available Scripts
+> Built with React, TypeScript, Tailwind CSS v4, and Chakra UI — featuring a custom ocean-inspired dark theme with glassmorphism effects and smooth GSAP animations.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Browse Games** — Explore a vast library of free-to-play games with infinite scroll
+- **Filter by Category** — MMORPG, Shooter, Strategy, MOBA, Racing, and 25+ more genres
+- **Filter by Platform** — PC, Browser, or All
+- **Sort Results** — By relevance, popularity, release date, or alphabetically
+- **Game Details** — Full game info with screenshots slider, system requirements, and metadata
+- **Genre-Coded Badges** — Each genre has a unique color identity for quick visual scanning
+- **Responsive Design** — Fully responsive across mobile, tablet, and desktop
+- **Smooth Animations** — GSAP-powered entrance animations and scroll-triggered reveals
+- **Glass UI** — Frosted glass navbar, cards, and overlays using backdrop-blur effects
+- **Custom Color Palette** — 10-color ocean-to-fire gradient theme (ink-black → brown-red)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Technology | Purpose |
+|------------|---------|
+| [React 18](https://react.dev/) | UI framework |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety |
+| [Vite](https://vitejs.dev/) | Build tool & dev server |
+| [Tailwind CSS v4](https://tailwindcss.com/) | Utility-first styling & color system |
+| [Chakra UI v3](https://www.chakra-ui.com/) | Component library (layout & behavior) |
+| [React Router v6](https://reactrouter.com/) | Client-side routing |
+| [TanStack Query](https://tanstack.com/query) | Server state & caching |
+| [GSAP](https://greensock.com/gsap/) | Animations & scroll effects |
+| [Axios](https://axios-http.com/) | HTTP client |
+| [Lucide React](https://lucide.dev/) | Icon system |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎨 Color Palette
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app uses a custom 10-color palette inspired by ocean depths to sunset warmth:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Name | Hex | Usage |
+|------|-----|-------|
+| Ink Black | `#001219` | Page background |
+| Dark Teal | `#005f73` | Raised surfaces, borders |
+| Dark Cyan | `#0a9396` | Primary accent |
+| Pearl Aqua | `#94d2bd` | Secondary text |
+| Vanilla Custard | `#e9d8a6` | Card game badges |
+| Golden Orange | `#ee9b00` | Warm highlights |
+| Burnt Caramel | `#ca6702` | Racing badges |
+| Rusty Spice | `#bb3e03` | Action badges |
+| Oxidized Iron | `#ae2012` | Error states |
+| Brown Red | `#9b2226` | MOBA badges |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [Node.js](https://nodejs.org/) (v18 or higher)
+- A free API key from [RapidAPI — FreeToGame](https://rapidapi.com/digiwalls/api/free-to-play-games-database)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+```bash
+# Clone the repository
+git clone https://github.com/mohamed-hegazy219427/game-over.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Navigate to the project
+cd game-over
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install dependencies
+npm install
+```
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Development
 
-### Analyzing the Bundle Size
+```bash
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Open [http://localhost:5173](http://localhost:5173) to view the app.
 
-### Making a Progressive Web App
+### Production Build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run build
+npm run preview
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Project Structure
 
-### Deployment
+```
+src/
+├── assets/              # Static assets (logo, images)
+├── components/
+│   ├── layout/
+│   │   ├── Layout.tsx       # Root layout with navbar & footer
+│   │   └── Navbar.tsx       # Glass navigation with dropdowns
+│   └── ui/
+│       ├── BackToTop.tsx    # Scroll-to-top button
+│       ├── ErrorState.tsx   # Error display with retry
+│       ├── GameCard.tsx     # Game card with genre badges
+│       ├── GameCardSkeleton.tsx  # Loading skeleton
+│       ├── Loading.tsx      # Spinner component
+│       └── ScreenShotsSlider.tsx # Auto-playing image carousel
+├── pages/
+│   ├── Home.tsx         # Hero + recommendations
+│   ├── Games.tsx        # Game grid with filters
+│   ├── GameDetails.tsx  # Full game info page
+│   └── NotFound.tsx     # 404 page
+├── App.tsx              # Router configuration
+├── main.tsx             # Entry point
+├── theme.ts             # Chakra UI system config
+├── types.ts             # TypeScript interfaces
+└── index.css            # Tailwind v4 design system
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 👨‍💻 Developer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Mohamed Hegazy**
+
+- GitHub: [@mohamed-hegazy219427](https://github.com/mohamed-hegazy219427)
+
+---
+
+##  Acknowledgments
+
+- Game data provided by [FreeToGame API](https://www.freetogame.com/api-doc)
+- Icons by [Lucide](https://lucide.dev/)
+- Animations powered by [GSAP](https://greensock.com/)
