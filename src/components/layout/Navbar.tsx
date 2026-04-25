@@ -16,24 +16,38 @@ export default function Navbar() {
   useGSAP(() => {
     gsap.from(navRef.current, { y: -60, opacity: 0, duration: 0.5, ease: 'power2.out' })
   }, { scope: navRef })
-
   const isHome = pathname === '/home' || pathname === '/'
   const isGames = pathname.startsWith('/game') && !pathname.includes('gameDetails')
 
   const NavLink = ({ to, label, active }: { to: string; label: string; active: boolean }) => (
     <Link to={to} onClick={() => setMobileOpen(false)}>
-      <Button
-        variant="ghost"
-        size="sm"
-        borderRadius={0}
-        className={`border-b-2 transition-all duration-200 px-4 ${
-          active
-            ? 'border-accent-glow text-accent-glow bg-accent/5'
-            : 'border-transparent text-text-secondary hover:text-accent-glow hover:bg-accent/5'
-        }`}
-      >
-        {label}
-      </Button>
+      <Box position="relative" px={1}>
+        <Button
+          variant="ghost"
+          size="sm"
+          className={`transition-all duration-300 ${
+            active
+              ? 'text-accent-glow! bg-accent/10!'
+              : 'text-text-secondary hover:text-accent-glow hover:bg-accent/5'
+          }`}
+        >
+          {label}
+        </Button>
+        {active && (
+          <Box
+            position="absolute"
+            bottom="-4px"
+            left="50%"
+            transform="translateX(-50%)"
+            w="40%"
+            h="2px"
+            bg="accent-glow"
+            borderRadius="full"
+            boxShadow="0 0 10px var(--color-accent-glow)"
+            className="animate-fade-in"
+          />
+        )}
+      </Box>
     </Link>
   )
 

@@ -328,88 +328,154 @@
     gap: 0.25rem;
     padding: 0.25rem 0.75rem !important;
     font-size: 0.8125rem !important;
-    font-weight: 500;
+    font-weight: 700 !important;
     border-radius: 9999px;
-    background: rgba(10, 147, 150, 0.15);
-    color: var(--color-dark-cyan-600);
-    border: 1px solid rgba(10, 147, 150, 0.25);
+    background: rgba(10, 147, 150, 0.3);
+    color: var(--color-dark-cyan-800);
+    border: 1px solid rgba(10, 147, 150, 0.4);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
   .badge-warm {
-    background: rgba(238, 155, 0, 0.15);
-    color: var(--color-golden-orange-600);
-    border-color: rgba(238, 155, 0, 0.25);
+    background: rgba(238, 155, 0, 0.35);
+    color: var(--color-golden-orange-900);
+    border-color: rgba(238, 155, 0, 0.5);
   }
 
   /* Genre-specific badge colors */
   .badge-shooter {
-    background: rgba(174, 32, 18, 0.15);
-    color: var(--color-oxidized-iron-700);
-    border-color: rgba(174, 32, 18, 0.3);
+    background: rgba(174, 32, 18, 0.35);
+    color: var(--color-oxidized-iron-900);
+    border-color: rgba(174, 32, 18, 0.5);
   }
   .badge-mmorpg {
-    background: rgba(0, 95, 115, 0.2);
-    color: var(--color-dark-teal-700);
-    border-color: rgba(0, 95, 115, 0.3);
+    background: rgba(0, 95, 115, 0.4);
+    color: var(--color-dark-teal-900);
+    border-color: rgba(0, 95, 115, 0.5);
   }
   .badge-strategy {
-    background: rgba(238, 155, 0, 0.15);
-    color: var(--color-golden-orange-700);
-    border-color: rgba(238, 155, 0, 0.25);
+    background: rgba(238, 155, 0, 0.3);
+    color: var(--color-golden-orange-900);
+    border-color: rgba(238, 155, 0, 0.4);
   }
   .badge-moba {
-    background: rgba(155, 34, 38, 0.15);
-    color: var(--color-brown-red-700);
-    border-color: rgba(155, 34, 38, 0.3);
+    background: rgba(155, 34, 38, 0.35);
+    color: var(--color-brown-red-900);
+    border-color: rgba(155, 34, 38, 0.5);
   }
   .badge-racing {
-    background: rgba(202, 103, 2, 0.15);
-    color: var(--color-burnt-caramel-700);
-    border-color: rgba(202, 103, 2, 0.25);
+    background: rgba(202, 103, 2, 0.35);
+    color: var(--color-burnt-caramel-900);
+    border-color: rgba(202, 103, 2, 0.5);
   }
   .badge-sports {
-    background: rgba(148, 210, 189, 0.15);
-    color: var(--color-pearl-aqua-400);
-    border-color: rgba(148, 210, 189, 0.25);
+    background: rgba(148, 210, 189, 0.35);
+    color: var(--color-pearl-aqua-900);
+    border-color: rgba(148, 210, 189, 0.5);
   }
   .badge-action {
-    background: rgba(187, 62, 3, 0.15);
-    color: var(--color-rusty-spice-700);
-    border-color: rgba(187, 62, 3, 0.3);
+    background: rgba(187, 62, 3, 0.35);
+    color: var(--color-rusty-spice-900);
+    border-color: rgba(187, 62, 3, 0.5);
   }
   .badge-rpg {
-    background: rgba(0, 95, 115, 0.2);
-    color: var(--color-dark-teal-800);
-    border-color: rgba(0, 95, 115, 0.3);
+    background: rgba(0, 95, 115, 0.45);
+    color: var(--color-dark-teal-900);
+    border-color: rgba(0, 95, 115, 0.6);
   }
   .badge-fantasy {
-    background: rgba(10, 147, 150, 0.15);
-    color: var(--color-dark-cyan-700);
-    border-color: rgba(10, 147, 150, 0.25);
+    background: rgba(10, 147, 150, 0.35);
+    color: var(--color-dark-cyan-900);
+    border-color: rgba(10, 147, 150, 0.5);
   }
   .badge-sci-fi {
-    background: rgba(0, 18, 25, 0.3);
-    color: var(--color-ink-black-800);
-    border-color: rgba(61, 200, 255, 0.2);
+    background: rgba(0, 18, 25, 0.6);
+    color: var(--color-ink-black-900);
+    border-color: rgba(61, 200, 255, 0.4);
   }
   .badge-card {
-    background: rgba(233, 216, 166, 0.12);
-    color: var(--color-vanilla-custard-400);
-    border-color: rgba(233, 216, 166, 0.2);
+    background: rgba(233, 216, 166, 0.35);
+    color: var(--color-vanilla-custard-900);
+    border-color: rgba(233, 216, 166, 0.5);
   }
   .badge-social {
-    background: rgba(148, 210, 189, 0.12);
-    color: var(--color-pearl-aqua-300);
-    border-color: rgba(148, 210, 189, 0.2);
+    background: rgba(148, 210, 189, 0.3);
+    color: var(--color-pearl-aqua-800);
+    border-color: rgba(148, 210, 189, 0.5);
   }
   .badge-fighting {
-    background: rgba(174, 32, 18, 0.18);
-    color: var(--color-oxidized-iron-600);
-    border-color: rgba(174, 32, 18, 0.3);
+    background: rgba(174, 32, 18, 0.4);
+    color: var(--color-oxidized-iron-900);
+    border-color: rgba(174, 32, 18, 0.6);
   }
   .badge-survival {
-    background: rgba(63, 151, 122, 0.15);
-    color: var(--color-pearl-aqua-300);
-    border-color: rgba(63, 151, 122, 0.25);
+    background: rgba(63, 151, 122, 0.35);
+    color: var(--color-pearl-aqua-800);
+    border-color: rgba(63, 151, 122, 0.5);
+  }
+  .badge-battle-royale {
+    background: rgba(174, 32, 18, 0.4);
+    color: var(--color-oxidized-iron-900);
+    border-color: rgba(174, 32, 18, 0.6);
+  }
+  .badge-anime {
+    background: rgba(148, 210, 189, 0.4);
+    color: var(--color-accent-glow);
+    border-color: rgba(10, 147, 150, 0.6);
+  }
+  .badge-military {
+    background: rgba(0, 78, 94, 0.5);
+    color: var(--color-dark-teal-900);
+    border-color: rgba(0, 95, 115, 0.6);
+  }
+  .badge-zombie {
+    background: rgba(155, 34, 38, 0.4);
+    color: var(--color-brown-red-900);
+    border-color: rgba(155, 34, 38, 0.6);
+  }
+  .badge-pixel {
+    background: rgba(238, 155, 0, 0.4);
+    color: var(--color-golden-orange-900);
+    border-color: rgba(238, 155, 0, 0.6);
+  }
+  .badge-flight {
+    background: rgba(148, 210, 189, 0.35);
+    color: var(--color-pearl-aqua-900);
+    border-color: rgba(148, 210, 189, 0.5);
+  }
+  .badge-open-world {
+    background: rgba(0, 147, 150, 0.35);
+    color: var(--color-accent-light);
+    border-color: rgba(10, 147, 150, 0.5);
+  }
+  .badge-sandbox {
+    background: rgba(233, 216, 166, 0.35);
+    color: var(--color-vanilla-custard-900);
+    border-color: rgba(233, 216, 166, 0.5);
+  }
+  .badge-pvp {
+    background: rgba(187, 62, 3, 0.4);
+    color: var(--color-rusty-spice-900);
+    border-color: rgba(187, 62, 3, 0.6);
+  }
+  .badge-pve {
+    background: rgba(10, 147, 150, 0.3);
+    color: var(--color-dark-cyan-900);
+    border-color: rgba(10, 147, 150, 0.5);
+  }
+  .badge-martial-arts {
+    background: rgba(174, 32, 18, 0.35);
+    color: var(--color-oxidized-iron-900);
+    border-color: rgba(174, 32, 18, 0.5);
+  }
+  .badge-tower-defense {
+    background: rgba(202, 103, 2, 0.4);
+    color: var(--color-burnt-caramel-900);
+    border-color: rgba(202, 103, 2, 0.6);
+  }
+  .badge-turn-based {
+    background: rgba(0, 95, 115, 0.35);
+    color: var(--color-dark-teal-900);
+    border-color: rgba(0, 95, 115, 0.5);
   }
 
   /* Skeleton / shimmer loading */
